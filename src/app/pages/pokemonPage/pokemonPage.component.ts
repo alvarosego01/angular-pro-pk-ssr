@@ -4,10 +4,13 @@ import { PokemonsService } from '../../pokemons/services/pokemons.service';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-page',
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './pokemonPage.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -40,9 +43,5 @@ export default class PokemonPageComponent implements OnInit {
             .subscribe(this.pokemon.set)
 
     }
-
-
-
-
 
 }
