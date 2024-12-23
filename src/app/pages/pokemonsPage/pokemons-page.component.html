@@ -1,0 +1,31 @@
+
+<h1 class="text-3xl">
+    Listado de pokemons
+</h1>
+<h2 class="text-xl">
+    Pagina actual: {{ this.currentPage() }}
+</h2>
+
+<hr class="my-2">
+
+
+@if ( this.pokemons() ) {
+
+    <pokemon-list [pokemons]="this.pokemons()" />
+
+} @else {
+
+    <pokemon-list-skeleton />
+
+}
+
+
+
+<div class="flex justify-between">
+    <button (click)="this.loadPokemons(-1)" class="mt-2">
+        Anteriores
+    </button>
+    <button (click)="this.loadPokemons(+1)" class="mt-2">
+        Siguientes
+    </button>
+</div>
