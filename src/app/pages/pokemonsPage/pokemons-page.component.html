@@ -1,4 +1,3 @@
-
 <h1 class="text-3xl">
     Listado de pokemons
 </h1>
@@ -8,24 +7,22 @@
 
 <hr class="my-2">
 
+@if ( this.pokemons().length > 0 ) {
 
-@if ( this.pokemons() ) {
-
-    <pokemon-list [pokemons]="this.pokemons()" />
+<pokemon-list [pokemons]="this.pokemons()" />
 
 } @else {
 
-    <pokemon-list-skeleton />
+<pokemon-list-skeleton />
 
 }
 
 
-
 <div class="flex justify-between">
-    <button (click)="this.loadPokemons(-1)" class="mt-2">
+    <button [disabled]="this.currentPage() === 1" [routerLink]="['/pokemons/page', currentPage()! - 1]" class="mt-2">
         Anteriores
     </button>
-    <button (click)="this.loadPokemons(+1)" class="mt-2">
+    <button [routerLink]="['/pokemons/page', currentPage()! + 1]" class="mt-2">
         Siguientes
     </button>
 </div>
