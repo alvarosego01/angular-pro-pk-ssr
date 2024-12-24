@@ -20,8 +20,6 @@ export default class PricingPageComponent implements OnInit {
 
     ngOnInit(): void {
 
-        document.title = 'Pricing page';
-
         this.title.setTitle('Pricing page');
         this.meta.updateTag({ name: 'description', content: 'Pricing page description asdfasfasd f' });
         this.meta.updateTag({ name: 'og:title', content: 'Pricing page description  f' });
